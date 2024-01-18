@@ -1,0 +1,44 @@
+﻿<ul class="list-unstyled">
+    @foreach (var product in products)
+    {
+        <li class="media my-3">
+            <div class="media-img-wrapper mr-2">
+                <a href="#">
+                    <img class="media-img" src="@product.ImageUrl" alt="@product.Title">
+                </a>
+            </div>
+            <div class="media-body">
+                <a href="#">
+                    <h4 class="mb-0">@product.Title</h4>
+                </a>
+                <p>@product.Description</p>
+                <h5 class="Price">
+                    $@product.Price
+                </h5>
+            </div>
+        </li>
+    }
+</ul>
+
+@code {
+    private static List<Product> products = new List<Product>
+    {
+        new Product
+        {
+            Id = 1,
+            Title = "title1",
+            Description = "Description1",
+            ImageUrl = "https://www.dumetschool.com/images/fck/1c99182403db6fa330f0b15024c587a9-android.jpg",
+            Price = 8
+        },
+        new Product
+        {
+            Id = 2,
+            Title = "title2",
+            Description = "Description2",
+            ImageUrl = "https://www.dumetschool.com/images/fck/1c99182403db6fa330f0b15024c587a9-android.jpg",
+            Price = 3
+        }
+
+    };
+}
